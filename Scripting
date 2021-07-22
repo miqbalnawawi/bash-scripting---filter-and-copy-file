@@ -1,0 +1,24 @@
+#!/bin/bash
+cd /home/iqbal/teleport
+FILES=$(ls -lrt |grep '.gz' |grep "$(date +'%b %d')" | awk '{print $NF}' )
+if [ -n "${FILES}" ]
+then
+    for f in ${FILES}
+    do
+       cp -R $FILES /home/iqbal/telelport2
+    done
+else
+    echo "NO FILES TO MOVE"
+fi
+
+#cd /home/iqbal/teleport3
+#FILES2=$(ls -lrt |grep '.gz' |grep "$(date +'%b %d')" | awk '{print $NF}' )
+#if [ -n "${FILES2}" ]
+#then
+#    for f in ${FILES2}
+#    do
+#        cp -R $FILES2 /home/iqbal/telelport2
+#    done
+#else
+#    echo "NO FILES TO MOVE"
+#fi
